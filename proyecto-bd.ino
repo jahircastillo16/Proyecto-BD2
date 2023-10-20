@@ -2,6 +2,7 @@ int diferenciaMaxMin = 0; //salida sensor
 int lecturaMaxima = 0; //valor maximo
 int lecturaMinima = 1023; //valor mínimo
 int lecturaSensor; // valor que lee a la salida del sensor
+int ultrasonico;
  float voltaje;
 #define glucoseSensor A0 //A0 Salida Sensor glucómetro
 
@@ -12,6 +13,8 @@ void setup() {
 void loop() {
 //Almacenar los valores de la salida del sensor
  lecturaSensor = analogRead(A3);
+ //definir el ultrasonico
+ ultrasonico= digitalWrite(13);
  //Si los valores de la salida son mayores que la lectura máxima, estos valores son ahora los máximos
  if (lecturaSensor>lecturaMaxima)
  {
